@@ -1,7 +1,3 @@
 require "ruboty/misawa/version"
+require "ruboty/handlers/misawa"
 
-module Ruboty
-  module Misawa
-    # Your code goes here...
-  end
-end
