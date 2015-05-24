@@ -11,11 +11,16 @@ module Ruboty
 
       def misawa(message={})
         keyword = message[:keyword]
-        m = meigens.select{|meigen|
-          %w(title character body).any? {|key|
-            meigen[key] and meigen[key].include?(keyword)
-          }
-        }.sample
+        unless keyword.nil?
+          m = meigens.select{|meigen|
+            %w(title character body).any? {|key|
+              meigen[key] and meigen[key].include?(keyword)
+            }
+          }.sample
+        end
+        if keyword.nil? || m.nil?
+          m = meigens.sample
+        end
         if m then
           message.reply m['image']
         end
