@@ -26,7 +26,7 @@ module Ruboty
 
       private
       def meigens
-        JSON.parse(open(ENV['MISAWA_ENDPOINT'] || 'http://horesase-boys.herokuapp.com/meigens.json').read)
+        @meigens ||= JSON.parse(open(ENV['MISAWA_ENDPOINT'] || 'http://horesase-boys.herokuapp.com/meigens.json').read)
       end
     end
   end
